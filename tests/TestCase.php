@@ -8,6 +8,18 @@ use Chargefield\LaravelWidget\WidgetServiceProvider;
 class TestCase extends BaseTestCase
 {
     /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->loadLaravelMigrations();
+    }
+
+    /**
      * Get package providers.
      *
      * @param  \Illuminate\Foundation\Application  $app
