@@ -18,10 +18,14 @@
       "Chargefield\\LaravelWidget\\Tests\\": "tests/"
     }
   },
-  "require": {},
+  "require": {
+    "php": ">=7.1.0",
+    "illuminate/support": "^6.0|^7.0"
+  },
   "require-dev": {
     "orchestra/testbench": "^4.2",
-    "matt-allan/laravel-code-style": "^0.4.0"
+    "matt-allan/laravel-code-style": "^0.4.0",
+    "mockery/mockery": "^1.2"
   },
   "extra": {
     "laravel": {
@@ -29,5 +33,10 @@
         "Chargefield\\LaravelWidget\\WidgetServiceProvider"
       ]
     }
-  }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
