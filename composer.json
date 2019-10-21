@@ -1,0 +1,33 @@
+{
+  "name": "chargefield/laravel-widget",
+  "description": "Widget based approach for structuring portions of your views.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Clayton D'Mello",
+      "email": "clayton@chargefield.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Chargefield\\LaravelWidget\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Chargefield\\LaravelWidget\\Tests\\": "tests/"
+    }
+  },
+  "require": {},
+  "require-dev": {
+    "orchestra/testbench": "^4.2",
+    "matt-allan/laravel-code-style": "^0.4.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Chargefield\\LaravelWidget\\WidgetServiceProvider"
+      ]
+    }
+  }
+}
