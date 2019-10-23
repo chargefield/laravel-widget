@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Widgets;
+
+use Chargefield\LaravelWidget\BaseWidget;
+use Chargefield\LaravelWidget\Tests\Fixtures\User;
+
+class UsersWidget extends BaseWidget
+{
+    public $title = 'All Users';
+
+    protected $accounts;
+
+    public function users()
+    {
+        $this->accounts = User::all();
+        return $this->accounts;
+    }
+
+    protected function count()
+    {
+        return $this->accounts->count();
+    }
+}
