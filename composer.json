@@ -15,7 +15,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Chargefield\\LaravelWidget\\Tests\\": "tests/"
+      "Chargefield\\LaravelWidget\\Tests\\": "tests/",
+      "App\\": "vendor/orchestra/testbench-core/laravel/app"
     }
   },
   "require": {
