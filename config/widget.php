@@ -18,10 +18,10 @@ return [
     | View Path
     |--------------------------------------------------------------------------
     |
-    | This value sets the path for widget views.
+    | This value sets the root view path.
     |
     */
 
-    'view_path' => resource_path('views/widgets'),
+    'root_view_path' => 'widgets',
 
 ];
