@@ -87,7 +87,7 @@ abstract class BaseWidget
     {
         return (new Collection((new ReflectionClass($this))->getMethods(ReflectionMethod::IS_PUBLIC)))
             ->filter(function ($method) {
-                return ! in_array($method->getName(), ['with', 'view', 'render']);
+                return ! in_array($method->getName(), ['with', 'view', 'render']) && ! $method->isConstructor();
             })
             ->sortBy('name');
     }

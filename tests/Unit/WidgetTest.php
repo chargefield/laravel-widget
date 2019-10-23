@@ -42,6 +42,7 @@ class WidgetTest extends TestCase
         $this->assertEquals($users->toArray(), $view_data['users']->toArray());
         $this->assertArrayHasKey('title', $view_data);
         $this->assertArrayHasKey('users', $view_data);
+        $this->assertArrayNotHasKey('__construct', $view_data);
         $this->assertArrayNotHasKey('accounts', $view_data);
         $this->assertArrayNotHasKey('count', $view_data);
         $this->assertEquals('All Users', $view_data['title']);

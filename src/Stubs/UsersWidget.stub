@@ -11,9 +11,13 @@ class UsersWidget extends BaseWidget
 
     protected $accounts;
 
-    public function users()
+    public function __construct()
     {
         $this->accounts = User::all();
+    }
+
+    public function users()
+    {
         return $this->accounts;
     }
 
