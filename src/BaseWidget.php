@@ -90,13 +90,13 @@ abstract class BaseWidget
     {
         return (new Collection((new ReflectionClass($this))->getMethods(ReflectionMethod::IS_PUBLIC)))
             ->filter(function ($method) {
-                return !in_array($method->getName(), ['__get', 'with', 'view', 'render']) && !$method->isConstructor();
+                return ! in_array($method->getName(), ['__get', 'with', 'view', 'render']) && ! $method->isConstructor();
             })
             ->sortBy('name');
     }
 
     /**
-     * Dynamically get external values
+     * Dynamically get external values.
      *
      * @param string $key
      * @return mixed
