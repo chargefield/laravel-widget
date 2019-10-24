@@ -29,7 +29,9 @@ php artisan widget:make ExampleWidget
 ```
 
 This will generate the following files:
+
 _app/Http/Widgets/ExampleWidget.php_
+
 _resources/views/widgets/example-widget.blade.php_
 
 ### Blade Directive
@@ -40,10 +42,10 @@ Including a widget is as easy as using the `@widget` blade directive:
 @widget('ExampleWidget')
 ```
 
-You can pass data to the widget as the second argument:
+You can pass external data to the widget as an array to the second argument. It will be available in both the class and view:
 
 ```php
-@widget('ExampleWidget', ['more_data' => 'More data'])
+@widget('ExampleWidget', ['four' => 'Four'])
 ```
 
 ### Widget Data
@@ -66,7 +68,7 @@ class ExampleWidget extends BaseWidget
     public function numbers()
     {
         return [
-            'One', 'Two', 'Three',
+            'One', 'Two', 'Three', $this->four,
         ];
     }
 }
@@ -79,6 +81,16 @@ Widget Blade View:
 @foreach($numbers as $number)
 <p>{{ $number }}</p>
 @endforeach
+```
+
+Output:
+
+```html
+<h1>Hello World</h1>
+<p>One</p>
+<p>Two</p>
+<p>Three</p>
+<p>Four</p>
 ```
 
 ### Testing
