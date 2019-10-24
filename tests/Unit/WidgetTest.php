@@ -27,8 +27,11 @@ class WidgetTest extends TestCase
         $this->assertTrue(File::exists($parser->getClassPath()));
         $this->assertTrue(File::exists($parser->getViewPath()));
 
-        $widget = new \App\Http\Widgets\UsersWidget;
+        $widget = (new \App\Http\Widgets\UsersWidget)->with([
+            'external' => 'This is external data',
+        ]);
 
+        $this->assertEquals('This is external data', $widget->external);
         $this->assertEquals('All Users', $widget->title);
         $this->assertCount(5, $widget->users());
         $this->assertEquals($users->toArray(), $widget->users()->toArray());
@@ -42,11 +45,13 @@ class WidgetTest extends TestCase
         $this->assertEquals($users->toArray(), $view_data['users']->toArray());
         $this->assertArrayHasKey('title', $view_data);
         $this->assertArrayHasKey('users', $view_data);
+        $this->assertArrayHasKey('external', $view_data);
         $this->assertArrayNotHasKey('__construct', $view_data);
         $this->assertArrayNotHasKey('accounts', $view_data);
         $this->assertArrayNotHasKey('count', $view_data);
         $this->assertEquals('All Users', $view_data['title']);
         $this->assertCount(5, $view_data['users']);
+        $this->assertEquals('This is external data', $view_data['external']);
 
         $this->cleanFiles($parser);
     }

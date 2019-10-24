@@ -10,6 +10,7 @@ use Chargefield\LaravelWidget\Facades\Widget;
 
 abstract class BaseWidget
 {
+    private $external_data = [];
     private $view_data = [];
 
     /**
@@ -43,7 +44,7 @@ abstract class BaseWidget
      */
     public function with(array $data = [])
     {
-        $this->view_data = $data;
+        $this->external_data = $data;
 
         return $this;
     }
@@ -55,6 +56,8 @@ abstract class BaseWidget
      */
     protected function buildViewData()
     {
+        $this->view_data = $this->external_data;
+
         $this->getProperties()->each(function ($property) {
             $this->view_data[$property->getName()] = $property->getValue($this);
         });
@@ -87,8 +90,21 @@ abstract class BaseWidget
     {
         return (new Collection((new ReflectionClass($this))->getMethods(ReflectionMethod::IS_PUBLIC)))
             ->filter(function ($method) {
-                return ! in_array($method->getName(), ['with', 'view', 'render']) && ! $method->isConstructor();
+                return !in_array($method->getName(), ['__get', 'with', 'view', 'render']) && !$method->isConstructor();
             })
             ->sortBy('name');
+    }
+
+    /**
+     * Dynamically get external values
+     *
+     * @param string $key
+     * @return mixed
+     */
+    public function __get($key)
+    {
+        if (isset($this->external_data[$key])) {
+            return $this->external_data[$key];
+        }
     }
 }
