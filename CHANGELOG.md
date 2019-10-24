@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-widget` will be documented in this file
 
+## 1.0.5 - 2019-10-24
+
+-   Format code
+
 ## 1.0.4 - 2019-10-24
 
 -   Update README.md
