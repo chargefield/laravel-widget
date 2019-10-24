@@ -30,7 +30,7 @@ php artisan widget:make ExampleWidget
 
 This will generate the following files:
 _app/Http/Widgets/ExampleWidget.php_
-_resource/views/widgets/example-widget.blade.php_
+_resources/views/widgets/example-widget.blade.php_
 
 ### Blade Directive
 
