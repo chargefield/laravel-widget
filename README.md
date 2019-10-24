@@ -1,8 +1,8 @@
 # Laravel Widget
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/chargefield/laravel-widget.svg?style=flat-square)](https://packagist.org/packages/chargefield/laravel-widget)
-[![Total Downloads](https://img.shields.io/packagist/dt/chargefield/laravel-widget.svg?style=flat-square)](https://packagist.org/packages/chargefield/laravel-widget)
-[![MIT License](https://img.shields.io/packagist/l/chargefield/laravel-widget.svg?style=flat-square)](https://packagist.org/packages/chargefield/laravel-widget)
+[![Latest Stable Version](https://poser.pugx.org/chargefield/laravel-widget/v/stable)](https://packagist.org/packages/chargefield/laravel-widget)
+[![Total Downloads](https://poser.pugx.org/chargefield/laravel-widget/downloads)](https://packagist.org/packages/chargefield/laravel-widget)
+[![License](https://poser.pugx.org/chargefield/laravel-widget/license)](https://packagist.org/packages/chargefield/laravel-widget)
 
 Laravel Widget is a class based approach for structuring portions of your views.
 
