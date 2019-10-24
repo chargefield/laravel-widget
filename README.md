@@ -17,31 +17,37 @@ composer require chargefield/laravel-widget
 
 ### Artisan Command
 
-```php
+```bash
 php artisan make:widget ExampleWidget
 ```
 
 or
 
-```php
+```bash
 php artisan widget:make ExampleWidget
 ```
 
 This will generate the following files:
-app/Http/Widgets/ExampleWidget.php
-resource/views/widgets/example-widget.blade.php
+_app/Http/Widgets/ExampleWidget.php_
+_resource/views/widgets/example-widget.blade.php_
 
 ### Blade Directive
 
-Including a widget is as easy as using the @widget blade directive:
+Including a widget is as easy as using the `@widget` blade directive:
+
+```php
 @widget('ExampleWidget')
+```
 
 You can pass data to the widget as the second argument:
+
+```php
 @widget('ExampleWidget', ['more_data' => 'More data'])
+```
 
 ### Widget Data
 
-All public properties and methods are passed down to the view as their name.
+All public properties and public methods are passed down to the view as their respected names.
 
 **Example**
 
